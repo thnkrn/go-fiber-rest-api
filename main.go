@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -10,11 +9,6 @@ import (
 	"github.com/thnkrn/go-fiber-rest-api/middleware"
 	"github.com/thnkrn/go-fiber-rest-api/user"
 )
-
-func hello(c *fiber.Ctx) error {
-	fmt.Println("test")
-	return c.SendString("Hello World")
-}
 
 func login(c *fiber.Ctx) error {
 	user := c.FormValue("user")
