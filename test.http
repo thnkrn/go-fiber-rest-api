@@ -1,10 +1,22 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiZXhwIjoxNjQyNDAzOTcyLCJuYW1lIjoiSm9obiBMYXJrIn0.qNad8bPjmaODXW8O31HU4tQCsfTc3FJVIiz--g1MlX4
+
+POST http://localhost:3000/login
+Content-Type: application/x-www-form-urlencoded
+
+user=john
+&pass=lark
+###
+
 GET http://localhost:3000/users
+Authorization: Bearer {{token}}
 ###
 
 GET http://localhost:3000/user/1
+Authorization: Bearer {{token}}
 ###
 
 POST http://localhost:3000/user
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -15,9 +27,11 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:3000/user/1
+Authorization: Bearer {{token}}
 ###
 
 PUT http://localhost:3000/user/2
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
