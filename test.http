@@ -1,3 +1,18 @@
+GET http://localhost:3000/users
+###
 
-GET http://localhost:3000/
+GET http://localhost:3000/user/1
+###
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "fisrtname": "John",
+  "lastname": "Lark",
+  "email": "johnlark@gmail.com"
+}
+###
+
+DELETE http://localhost:3000/user/1
 ###
