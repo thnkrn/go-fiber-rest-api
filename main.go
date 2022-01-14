@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/thnkrn/go-fiber-rest-api/middleware"
 	"github.com/thnkrn/go-fiber-rest-api/user"
@@ -44,11 +45,13 @@ func login(c *fiber.Ctx) error {
 }
 
 func Routers(app *fiber.App) {
+	api := app.Group("/", logger.New())
+
 	// Auth
-	app.Post("/login", login)
+	api.Post("/login", login)
 
 	// User
-	users := app.Group("/", middleware.Protected())
+	users := api.Group("/", middleware.Protected())
 	users.Get("/users", user.GetUsers)
 	users.Get("/user/:id", user.GetUser)
 	users.Post("/user", user.SaveUser)
