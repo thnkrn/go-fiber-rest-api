@@ -16,3 +16,13 @@ Content-Type: application/json
 
 DELETE http://localhost:3000/user/1
 ###
+
+PUT http://localhost:3000/user/2
+Content-Type: application/json
+
+{
+  "fisrtname": "John1",
+  "lastname": "Lark",
+  "email": "johnlark@gmail.com"
+}
+###
